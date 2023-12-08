@@ -17,7 +17,10 @@
         </div>
         <div id="fireflies-container"></div>
     </div>
-    <audio id="background-audio" src="music.mp3" autoplay></audio>
-    <script src="script.js"></script>
+    <!-- Utiliza autoplay y controls para intentar la reproducción automática -->
+    <audio autoplay controls loop>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+    
 </body>
 </html>
