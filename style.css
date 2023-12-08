@@ -1,0 +1,120 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+    display: flex;
+}
+
+.side-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#magic-text-left,
+#magic-text-right,
+.magic-text {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    font-family: 'Caveat', cursive; /* Cambia 'Caveat' por la fuente que desees */
+}
+
+#magic-text-left,
+#magic-text-right {
+    animation: magicTextAnimation 3s infinite alternate;
+}
+
+#magic-text-left {
+    animation-delay: 0.5s; /* Retardo para que aparezca después del otro texto */
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+}
+
+#fireflies-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.firefly {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: yellow;
+    border-radius: 50%;
+    opacity: 0;
+    animation: flicker 1s infinite alternate, move 5s infinite linear;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes flicker {
+    to {
+        opacity: 0.8;
+    }
+}
+
+@keyframes move {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(50px, 50px);
+    }
+    50% {
+        transform: translate(100px, 0);
+    }
+    75% {
+        transform: translate(50px, -50px);
+    }
+}
+
+@keyframes magicTextAnimation {
+    to {
+        opacity: 0;
+    }
+}
+
+.text-container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.magic-text {
+    font-size: 24px;
+    color: white;
+    animation: textAnimation 10s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    font-family: 'Caveat', cursive; /* Cambia 'Caveat' por la fuente que desees */
+}
+
+@keyframes textAnimation {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
