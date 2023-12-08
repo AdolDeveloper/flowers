@@ -22,19 +22,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     magicTextLeft.classList.remove("hidden");
     magicTextRight.classList.remove("hidden");
-
-    // Asegúrate de que el audio esté disponible antes de intentar reproducirlo
-    const backgroundAudio = document.getElementById("background-audio");
-
-    if (backgroundAudio) {
-        // Verifica si la reproducción automática está permitida
-        const isAutoplayAllowed = backgroundAudio.autoplay;
-
-        if (!isAutoplayAllowed) {
-            // Si la reproducción automática no está permitida, intenta reproducir manualmente
-            backgroundAudio.play().catch(function(error) {
-                console.error("Error al reproducir el audio:", error);
-            });
-        }
-    }
 });
